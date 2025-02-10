@@ -1,0 +1,125 @@
+/* General button styling */
+button {
+    background-color: rgb(149, 157, 0);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+thead {
+    background-color: rgb(86, 112, 0);
+    color: white;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table body */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+input {
+    width: 30vh;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Input fields inside table */
+td input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Row hover effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.todo-item { 
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   
+    table {
+        width: 100%;
+        display: block;
+        // overflow-x: auto;
+        // white-space: nowrap;
+    }
+
+    /* Make table scrollable on small screens */
+    thead {
+        display: none; /* Hide table header for smaller screens */
+    }
+
+    tbody,
+    tr,
+    td {
+        display: block;
+    }
+
+    tr {
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    td {
+        text-align: left;
+        padding: 8px;
+        position: relative;
+    }
+
+    /* Make data more readable in mobile view */
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: blue;
+        margin-bottom: 5px;
+    }
+
+    /* Stack buttons for better visibility */
+    td button {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

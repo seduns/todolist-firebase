@@ -1,0 +1,32 @@
+<form action="" #createTodoForm="ngForm">
+    <div>
+        <input type="text" placeholder="title" name="title" ngModel/>
+        <input type="text" placeholder="description" name="description" ngModel/>
+        <!-- <button>done</button> -->
+        <button (click)="submitForm()" type="submit">submit</button>
+    </div>
+</form>
+
+<!-- Display Data in Table -->
+ <div class="todo-item">
+     <table>
+         <thead>
+             <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos$ | async">
+            <td><input [(ngModel)]="todo.title" /></td>
+            <td><input [(ngModel)]="todo.description" /></td>
+            <td>
+                <button (click)="updateData(todo.id, todo.title, todo.description)">Update</button>
+                <button (click)="deleteData(todo.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+  
